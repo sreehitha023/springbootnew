@@ -33,7 +33,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    @Cacheable(cacheNames = "books", key="#id")
+     @Cacheable(cacheNames = "books", key="#id")
     public Book getBook(long id) {
         logger.info("fetching book from db");
         Optional<Book> book = bookRepository.findById(id);
